@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Study Buddy | Study Smarter</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Study<span>Buddy</span></a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#subjects">Subjects</a></li>
+                <li><a href="#features">Features</a></li>
+            </ul>
+
+            <a href="#subjects" class="nav-button">Start Learning</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Homepage -->
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+                <p class="tagline">YOUR LEARNING JOURNEY STARTS HERE</p>
+
+                <h1>
+                    Study smarter.<br>
+                    Learn better.<br>
+                    <span>Achieve more.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Your personal learning companion for exploring subjects,
+                    practising questions, taking quizzes, and reaching your
+                    academic goals.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#subjects" class="primary-button">
+                        Explore Subjects
+                    </a>
+
+                    <a href="#features" class="secondary-button">
+                        Discover Features
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div>
+                        <h3>Learn</h3>
+                        <p>At your own pace</p>
+                    </div>
+
+                    <div>
+                        <h3>Practise</h3>
+                        <p>Build confidence</p>
+                    </div>
+
+                    <div>
+                        <h3>Improve</h3>
+                        <p>Track your growth</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <div class="card-icon">📚</div>
+
+                <p class="card-label">YOUR NEXT CHAPTER</p>
+
+                <h2>Knowledge starts with curiosity.</h2>
+
+                <p>
+                    Choose a subject, explore a topic, and take the next
+                    step towards your goals.
+                </p>
+
+                <a href="#subjects">Find your next topic →</a>
+            </div>
+
+        </section>
+
+        <!-- Subjects -->
+        <section class="subjects-section" id="subjects">
+
+            <div class="section-heading">
+                <p class="tagline">EXPLORE AND DISCOVER</p>
+
+                <h2>What do you want to learn?</h2>
+
+                <p>
+                    Choose a subject and start building your knowledge.
+                </p>
+            </div>
+
+            <!-- Subject Search -->
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="subjectSearch"
+                    placeholder="Search for a subject..."
+                    aria-label="Search subjects"
+                >
+            </div>
+
+            <!-- Subject Cards -->
+            <div class="subject-grid" id="subjectGrid">
+
+                <!-- Mathematics -->
+                <article class="subject-card">
+                    <div class="subject-icon">🔢</div>
+                    <h3>Mathematics</h3>
+                    <p>Numbers, algebra, geometry, and statistics.</p>
+
+                    <a href="mathematics.html" class="subject-link">
+                        Start learning →
+                    </a>
+                </article>
+
+                <!-- English -->
+                <article class="subject-card">
+                    <div class="subject-icon">📖</div>
+                    <h3>English Language</h3>
+                    <p>Grammar, vocabulary, comprehension, and writing.</p>
+
+                    <a href="english.html" class="subject-link">
+                        Start learning →
+                    </a>
+                </article>
+
+                <!-- Biology -->
+                <article class="subject-card">
+                    <div class="subject-icon">🧬</div>
+                    <h3>Biology</h3>
+                    <p>Discover living organisms and the natural world.</p>
+
+                    <a href="biology.html" class="subject-link">
+                        Start learning →
+                    </a>
+                </article>
+
+                <!-- Chemistry -->
+                <article class="subject-card">
+                    <div class="subject-icon">⚗️</div>
+                    <h3>Chemistry</h3>
+                    <p>Explore elements, reactions, and matter.</p>
+
+                    <a href="#" class="subject-link">
+                        Coming soon →
+                    </a>
+                </article>
+
+                <!-- Physics -->
+                <article class="subject-card">
+                    <div class="subject-icon">⚡</div>
+                    <h3>Physics</h3>
+                    <p>Understand motion, energy, forces, and electricity.</p>
+
+                    <a href="#" class="subject-link">
+                        Coming soon →
+                    </a>
+                </article>
+
+                <!-- Computer Science -->
+                <article class="subject-card">
+                    <div class="subject-icon">💻</div>
+                    <h3>Computer Science</h3>
+                    <p>Learn programming and computer fundamentals.</p>
+
+                    <a href="#" class="subject-link">
+                        Coming soon →
+                    </a>
+                </article>
+
+                <!-- Economics -->
+                <article class="subject-card">
+                    <div class="subject-icon">📈</div>
+                    <h3>Economics</h3>
+                    <p>Study markets, resources, demand, and supply.</p>
+
+                    <a href="#" class="subject-link">
+                        Coming soon →
+                    </a>
+                </article>
+
+                <!-- Geography -->
+                <article class="subject-card">
+                    <div class="subject-icon">🌍</div>
+                    <h3>Geography</h3>
+                    <p>Explore places, environments, and our planet.</p>
+
+                    <a href="#" class="subject-link">
+                        Coming soon →
+                    </a>
+                </article>
+
+            </div>
+
+            <!-- Search Message -->
+            <p id="noResults" class="no-results" hidden>
+                No subjects found. Try another search.
+            </p>
+
+        </section>
+
+        <!-- Features -->
+        <section class="features-section" id="features">
+
+            <div class="section-heading">
+                <p class="tagline">MORE THAN JUST READING</p>
+
+                <h2>Everything you need to learn better.</h2>
+
+                <p>
+                    Develop better study

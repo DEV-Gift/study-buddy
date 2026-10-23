@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Biology | Study Buddy</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .biology-content {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .biology-hero {
+            text-align: center;
+            padding: 50px 20px;
+            border-radius: 16px;
+            background: #e8f5e9;
+            color: #183b2b;
+        }
+
+        .biology-hero h1 {
+            font-size: 2.5rem;
+            margin: 15px 0;
+        }
+
+        .biology-hero p {
+            line-height: 1.8;
+        }
+
+        .biology-topics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .biology-topic {
+            padding: 25px;
+            border-radius: 12px;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .biology-topic h3 {
+            margin-bottom: 12px;
+        }
+
+        .biology-topic p {
+            line-height: 1.7;
+        }
+
+        .biology-quiz {
+            margin-top: 40px;
+            padding: 30px;
+            border-radius: 12px;
+            background: #f0f4f8;
+        }
+
+        .biology-quiz h2 {
+            margin-bottom: 15px;
+        }
+
+        .biology-quiz select,
+        .biology-quiz button {
+            padding: 12px;
+            margin-top: 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .biology-quiz button {
+            cursor: pointer;
+            background: #183b2b;
+            color: white;
+        }
+
+        #quizResult {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 25px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                Study<span>Buddy</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#subjects">Subjects</a></li>
+            </ul>
+
+            <a href="#biologyTopics" class="nav-button">Explore Topics</a>
+        </nav>
+    </header>
+
+    <main class="biology-content">
+
+        <!-- Biology Introduction -->
+        <section class="biology-hero">
+            <div style="font-size: 55px;">🧬</div>
+
+            <p>DISCOVER THE SCIENCE OF LIFE</p>
+
+            <h1>Welcome to Biology</h1>
+
+            <p>
+                Explore living organisms, understand how the human body
+                works, and discover the relationships between living
+                things and their environment.
+            </p>
+        </section>
+
+        <!-- Biology Topics -->
+        <section id="biologyTopics">
+            <div class="section-heading" style="margin-top: 45px;">
+                <p class="tagline">LEARN SOMETHING NEW</p>
+                <h2>Explore Biology Topics</h2>
+                <p>Start with the basics and build your knowledge.</p>
+            </div>
+
+            <div class="biology-topics">
+
+                <article class="biology-topic">
+                    <h3>🔬 1. Cell Biology</h3>
+                    <p>
+                        Cells are the basic structural and functional
+                        units of living organisms. Some organisms consist
+                        of one cell, while others contain many cells.
+                    </p>
+                    <p><strong>Key point:</strong> Cells carry out the
+                    processes needed for life.</p>
+                </article>
+
+                <article class="biology-topic">
+                    <h3>🌱 2. Plant Biology</h3>
+                    <p>
+                        Plants are living organisms. Most plants make
+                        their own food through photosynthesis, using
+                        light energy, water, and carbon dioxide.
+                    </p>
+                    <p><strong>Key point:</strong> Chlorophyll helps
+                    plants absorb light energy.</p>
+                </article>
+
+                <article class="biology-topic">
+                    <h3>🫀 3. Human Biology</h3>
+                    <p>
+                        Human biology examines the structure and function
+                        of the human body, including organs and body
+                        systems such as the digestive and respiratory
+                        systems.
+                    </p>
+                    <p><strong>Key point:</strong> Different organs
+                    work together to keep the body functioning.</p>
+                </article>
+
+                <article class="biology-topic">
+                    <h3>🐾 4. Ecology</h3>
+                    <p>
+                        Ecology is the study of how organisms interact
+                        with one another and with their environment.
+                    </p>
+                    <p><strong>Key point:</strong> Living things depend
+                    on their environment for resources.</p>
+                </article>
+
+                <article class="biology-topic">
+                    <h3>🧬 5. Genetics</h3>
+                    <p>
+                        Genetics is the study of heredity and variation.
+                        Genes carry information that can be passed from
+                        parents to offspring.
+                    </p>
+                    <p><strong>Key point:</strong> Genes influence
+                    inherited characteristics.</p>
+                </article>
+
+                <article class="biology-topic">
+                    <h3>🦠 6. Microbiology</h3>
+                    <p>
+                        Microbiology studies microscopic organisms,
+                        including bacteria and many other organisms
+                        that cannot be seen clearly with the naked eye.
+                    </p>
+                    <p><strong>Key point:</strong> Microorganisms live
+                    in many different environments.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Practice Quiz -->
+        <section class="biology-quiz">
+            <h2>🧠 Test Your Knowledge</h2>
+
+            <p>
+                Which part of a plant cell contains chlorophyll and
+                helps absorb light for photosynthesis?
+            </p>
+
+            <select id="biologyAnswer">
+                <option value="">Choose your answer</option>
+                <option value="nucleus">Nucleus</option>
+                <option value="chloroplast">Chloroplast</option>
+                <option value="cell membrane">Cell membrane</option>
+                <option value="vacuole">Vacuole</option>
+            </select>
+
+            <br>
+
+            <button type="button" onclick="checkBiologyAnswer()">
+                Check Answer
+            </button>
+
+            <p id="quizResult" aria-live="polite"></p>
+        </section>
+
+        <a href="index.html" class="back-home">
+            ← Back to Home
+        </a>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="index.html" class="logo">
+            Study<span>Buddy</span>
+        </a>
+
+        <p>Keep learning. Keep growing.</p>
+
+        <p class="copyright">
+            &copy; 2026 Study Buddy. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        function checkBiologyAnswer() {
+            const answer = document.getElementById("biologyAnswer").value;
+            const result = document.getElementById("quizResult");
+
+            if (answer === "") {
+                result.textContent = "Please choose an answer first.";
+            } else if (answer === "chloroplast") {
+                result.textContent = "Correct! Chloroplasts contain chlorophyll.";
+            } else {
+                result.textContent = "Not quite. Try again!";
+            }
+        }
+    </script>
+
+</body>
+</html>
