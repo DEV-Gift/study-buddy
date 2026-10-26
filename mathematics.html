@@ -7,6 +7,187 @@
     <title>Mathematics | Study Buddy</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Mathematics page theme */
+        .math-page {
+            background-color: #0b1628;
+            color: #e2e8f0;
+            padding: 60px 5%;
+        }
+
+        .math-page .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .math-page .tagline {
+            color: #d4af37;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .math-page h1,
+        .math-page h2,
+        .math-page h3 {
+            color: #f1f5f9;
+        }
+
+        .math-page h1 span,
+        .math-page h2 span {
+            color: #d4af37;
+        }
+
+        .math-page p {
+            color: #b0bfd2;
+            line-height: 1.7;
+        }
+
+        /* Mathematics topic cards */
+        .math-page .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto 70px;
+        }
+
+        .math-page .feature-card {
+            background-color: #172a45;
+            color: #e2e8f0;
+            border: 1px solid #2b3d55;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease,
+                        border-color 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        .math-page .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.12);
+        }
+
+        .math-page .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .math-page .feature-card h3 {
+            color: #d4af37;
+            margin-bottom: 12px;
+        }
+
+        /* Quick Practice section */
+        .math-practice {
+            max-width: 750px;
+            margin: 0 auto 60px;
+            padding: 35px 25px;
+            text-align: center;
+            background-color: #142743;
+            border: 1px solid #2b3d55;
+            border-radius: 15px;
+        }
+
+        .math-practice h2 {
+            margin-bottom: 10px;
+        }
+
+        .math-practice h3 {
+            margin: 25px 0;
+            font-size: 1.4rem;
+        }
+
+        .math-answers {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .math-answers .primary-button {
+            min-width: 100px;
+            background-color: #d4af37;
+            color: #0b1628;
+            border: 1px solid #d4af37;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease,
+                        transform 0.3s ease;
+        }
+
+        .math-answers .primary-button:hover {
+            background-color: #f0d879;
+            transform: translateY(-2px);
+        }
+
+        #answerResult {
+            min-height: 28px;
+            margin-top: 22px;
+            font-weight: bold;
+        }
+
+        #answerResult.correct {
+            color: #d4af37;
+        }
+
+        #answerResult.incorrect {
+            color: #ff9999;
+        }
+
+        .math-back {
+            text-align: center;
+        }
+
+        .math-back .primary-button {
+            display: inline-block;
+            background-color: #d4af37;
+            color: #0b1628;
+            border: 1px solid #d4af37;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .math-back .primary-button:hover {
+            background-color: #f0d879;
+        }
+
+        /* Mobile-friendly layout */
+        @media (max-width: 650px) {
+            .math-page {
+                padding: 40px 5%;
+            }
+
+            .math-page .features-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .math-page .feature-card {
+                padding: 25px 20px;
+            }
+
+            .math-practice {
+                padding: 30px 18px;
+            }
+
+            .math-answers {
+                gap: 10px;
+            }
+
+            .math-answers .primary-button {
+                min-width: 80px;
+                padding: 11px 18px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -25,7 +206,7 @@
     </header>
 
     <main>
-        <section class="subjects-section">
+        <section class="math-page">
 
             <div class="section-heading">
                 <p class="tagline">LET'S LEARN TOGETHER</p>
@@ -43,51 +224,75 @@
                 <article class="feature-card">
                     <div class="feature-icon">🔢</div>
                     <h3>Basic Arithmetic</h3>
-                    <p>Learn addition, subtraction, multiplication, and division.</p>
+                    <p>
+                        Learn addition, subtraction, multiplication,
+                        and division.
+                    </p>
                 </article>
 
                 <article class="feature-card">
                     <div class="feature-icon">📐</div>
                     <h3>Algebra</h3>
-                    <p>Explore variables, equations, and mathematical expressions.</p>
+                    <p>
+                        Explore variables, equations, and
+                        mathematical expressions.
+                    </p>
                 </article>
 
                 <article class="feature-card">
                     <div class="feature-icon">📏</div>
                     <h3>Geometry</h3>
-                    <p>Study shapes, angles, perimeter, and area.</p>
+                    <p>
+                        Study shapes, angles, perimeter, and area.
+                    </p>
                 </article>
 
                 <article class="feature-card">
                     <div class="feature-icon">📊</div>
                     <h3>Statistics</h3>
-                    <p>Learn about averages, data, and probability.</p>
+                    <p>
+                        Learn about averages, data, and probability.
+                    </p>
                 </article>
 
             </div>
 
-            <div class="section-heading">
-                <h2>Quick Practice</h2>
-                <p>Test your understanding with a simple question.</p>
+            <section class="math-practice">
+                <h2>Quick <span>Practice</span></h2>
+
+                <p>
+                    Test your understanding with a simple question.
+                </p>
 
                 <h3>What is 12 × 8?</h3>
 
-                <button class="primary-button" onclick="checkAnswer(86)">
-                    86
-                </button>
+                <div class="math-answers">
+                    <button
+                        type="button"
+                        class="primary-button"
+                        onclick="checkAnswer(86)">
+                        86
+                    </button>
 
-                <button class="primary-button" onclick="checkAnswer(96)">
-                    96
-                </button>
+                    <button
+                        type="button"
+                        class="primary-button"
+                        onclick="checkAnswer(96)">
+                        96
+                    </button>
 
-                <button class="primary-button" onclick="checkAnswer(108)">
-                    108
-                </button>
+                    <button
+                        type="button"
+                        class="primary-button"
+                        onclick="checkAnswer(108)">
+                        108
+                    </button>
+                </div>
 
                 <p id="answerResult" aria-live="polite"></p>
-            </div>
+            </section>
 
-            <div class="section-heading">
+            <div class="math-back">
                 <a href="index.html#subjects" class="primary-button">
                     Back to Subjects
                 </a>
@@ -111,8 +316,10 @@
 
             if (answer === 96) {
                 result.textContent = "Correct! Well done! 🎉";
+                result.className = "correct";
             } else {
                 result.textContent = "Not quite. Try again!";
+                result.className = "incorrect";
             }
         }
     </script>

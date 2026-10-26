@@ -7,7 +7,7 @@
 
 :root {
     --navy: #0b1628;
-    --blue: #d4af37;
+    --blue: #3b82f6;
     --light-blue: #1b2c45;
     --white: #f1f5f9;
     --text: #e2e8f0;
@@ -21,10 +21,12 @@
     --gold-dark: #b8941f;
 }
 
+/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
 
+/* Page defaults */
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: var(--background);
@@ -34,6 +36,11 @@ body {
 
 a {
     text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
 }
 
 /* Navigation */
@@ -72,7 +79,7 @@ header {
     color: var(--text);
     font-size: 14px;
     font-weight: 600;
-    transition: 0.2s;
+    transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
@@ -86,7 +93,8 @@ header {
     border-radius: 8px;
     font-size: 14px;
     font-weight: 700;
-    transition: 0.2s;
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
 }
 
 .nav-button:hover {
@@ -144,7 +152,10 @@ header {
     border-radius: 8px;
     font-size: 14px;
     font-weight: 700;
-    transition: 0.2s;
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
 }
 
 .primary-button {
@@ -192,7 +203,7 @@ header {
     border-radius: 22px;
     background: #172a45;
     border: 1px solid var(--border);
-    transition: 0.2s;
+    transition: border-color 0.2s ease;
 }
 
 .hero-card:hover {
@@ -286,7 +297,8 @@ header {
     color: var(--white);
     font-size: 15px;
     outline: none;
-    transition: 0.2s;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
 }
 
 .search-box input::placeholder {
@@ -313,7 +325,15 @@ header {
     border: 1px solid var(--border);
     border-radius: 14px;
     background: #172a45;
-    transition: 0.2s;
+
+    /* Align card content consistently */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    transition: transform 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
 }
 
 .subject-card:hover {
@@ -343,20 +363,25 @@ header {
 .subject-card p {
     color: var(--muted);
     font-size: 14px;
-    min-height: 68px;
     margin-bottom: 18px;
+
+    /* Allow the description to fill available space */
+    flex-grow: 1;
 }
 
 .subject-link {
     color: var(--gold-light);
     font-size: 13px;
     font-weight: 700;
+    align-self: flex-start;
+    margin-top: auto;
 }
 
 .subject-link:hover {
     color: var(--gold);
 }
 
+/* Search results message */
 .no-results {
     text-align: center;
     color: var(--muted);
@@ -373,7 +398,8 @@ header {
     border: 1px solid var(--border);
     border-radius: 14px;
     background: #172a45;
-    transition: 0.2s;
+    transition: border-color 0.2s ease,
+                transform 0.2s ease;
 }
 
 .feature-card:hover {
@@ -444,7 +470,7 @@ footer p {
     margin-top: 6px;
 }
 
-/* Responsive layout */
+/* Responsive layout for tablets */
 @media (max-width: 950px) {
     .hero {
         grid-template-columns: 1fr 1fr;
@@ -460,6 +486,7 @@ footer p {
     }
 }
 
+/* Responsive layout for mobile phones */
 @media (max-width: 650px) {
     .navbar {
         flex-wrap: wrap;
@@ -499,8 +526,12 @@ footer p {
     .features-grid {
         grid-template-columns: 1fr;
     }
+}
 
-    .subject-card p {
-        min-height: auto;
-    }
+/* Keyboard accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 4px;
 }

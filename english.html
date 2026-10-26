@@ -7,10 +7,219 @@
     <title>English Language | Study Buddy</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* English page layout */
+        .english-content {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Hero section */
+        .english-hero {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 24px;
+        }
+
+        .english-hero h1 {
+            color: #f1f5f9;
+            font-size: clamp(40px, 5vw, 64px);
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+
+        .english-hero h1 span {
+            color: #d4af37;
+        }
+
+        .english-hero .hero-description {
+            max-width: 600px;
+        }
+
+        /* Topic cards */
+        .english-topics {
+            padding: 80px 24px;
+            background: #0e1b2e;
+        }
+
+        .english-topics .section-heading h2,
+        .english-lessons .section-heading h2 {
+            color: #f1f5f9;
+        }
+
+        .english-topics .section-heading > p:last-child,
+        .english-lessons .section-heading > p:last-child {
+            color: #b0bfd2;
+        }
+
+        .english-topics .tagline,
+        .english-lessons .tagline {
+            color: #d4af37;
+        }
+
+        .english-topics-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .english-topic-card {
+            padding: 25px;
+            background: #172a45;
+            border: 1px solid #2b3d55;
+            border-radius: 14px;
+            transition: 0.3s ease;
+        }
+
+        .english-topic-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+            box-shadow: 0 10px 25px #00000030;
+        }
+
+        .english-topic-icon {
+            width: 53px;
+            height: 53px;
+            display: grid;
+            place-items: center;
+            background: #223954;
+            border: 1px solid #d4af3740;
+            border-radius: 12px;
+            font-size: 27px;
+            margin-bottom: 20px;
+        }
+
+        .english-topic-card h3 {
+            color: #f1f5f9;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .english-topic-card p {
+            color: #b0bfd2;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .english-topic-card a {
+            color: #f0d879;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .english-topic-card a:hover {
+            color: #d4af37;
+        }
+
+        /* Lesson notes */
+        .english-lessons {
+            padding: 80px 24px;
+            background: #0b1628;
+        }
+
+        .english-lesson-list {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .english-lesson {
+            padding: 28px;
+            background: #172a45;
+            border: 1px solid #2b3d55;
+            border-radius: 14px;
+            transition: 0.3s ease;
+            scroll-margin-top: 25px;
+        }
+
+        .english-lesson:hover {
+            border-color: #d4af37;
+            transform: translateY(-3px);
+        }
+
+        .english-lesson h3 {
+            color: #f1f5f9;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .english-lesson p {
+            color: #b0bfd2;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .english-lesson strong {
+            color: #d4af37;
+        }
+
+        /* Call to action */
+        .english-cta {
+            padding: 70px 24px;
+            text-align: center;
+            background: #142743;
+            border-top: 1px solid #2b3d55;
+        }
+
+        .english-cta h2 {
+            color: #f1f5f9;
+            font-size: clamp(26px, 4vw, 36px);
+            margin-bottom: 14px;
+        }
+
+        .english-cta p {
+            color: #b0bfd2;
+            margin-bottom: 25px;
+        }
+
+        .english-cta .primary-button {
+            background: #d4af37;
+            color: #0b1628;
+        }
+
+        .english-cta .primary-button:hover {
+            background: #f0d879;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 950px) {
+            .english-topics-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .english-hero {
+                padding: 65px 24px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .english-topics,
+            .english-lessons {
+                padding: 60px 20px;
+            }
+
+            .english-hero {
+                padding: 55px 22px;
+            }
+
+            .english-topics-grid,
+            .english-lesson-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
+    <!-- Navigation -->
     <header>
         <nav class="navbar">
             <a href="index.html" class="logo">
@@ -31,35 +240,37 @@
 
     <main>
 
-        <section class="hero">
-            <div class="hero-content">
+        <!-- English Introduction -->
+        <section class="english-hero">
 
-                <p class="tagline">EXPRESS YOURSELF WITH CONFIDENCE</p>
+            <p class="tagline">
+                EXPRESS YOURSELF WITH CONFIDENCE
+            </p>
 
-                <h1>
-                    Learn <span>English Language.</span>
-                </h1>
+            <h1>
+                Learn <span>English Language.</span>
+            </h1>
 
-                <p class="hero-description">
-                    Improve your grammar, vocabulary, reading
-                    comprehension, and writing skills through
-                    simple explanations and practice.
-                </p>
+            <p class="hero-description">
+                Improve your grammar, vocabulary, reading
+                comprehension, and writing skills through
+                simple explanations and practice.
+            </p>
 
-                <div class="hero-buttons">
-                    <a href="#topics" class="primary-button">
-                        Explore Topics
-                    </a>
+            <div class="hero-buttons">
+                <a href="#topics" class="primary-button">
+                    Explore Topics
+                </a>
 
-                    <a href="index.html#subjects" class="secondary-button">
-                        Back to Subjects
-                    </a>
-                </div>
-
+                <a href="index.html#subjects" class="secondary-button">
+                    Back to Subjects
+                </a>
             </div>
+
         </section>
 
-        <section class="subjects-section" id="topics">
+        <!-- English Topics -->
+        <section class="english-topics" id="topics">
 
             <div class="section-heading">
                 <p class="tagline">ENGLISH LANGUAGE</p>
@@ -71,10 +282,10 @@
                 </p>
             </div>
 
-            <div class="subject-grid">
+            <div class="english-topics-grid">
 
-                <article class="subject-card">
-                    <div class="subject-icon">✍️</div>
+                <article class="english-topic-card">
+                    <div class="english-topic-icon">✍️</div>
 
                     <h3>Grammar</h3>
 
@@ -83,13 +294,13 @@
                         tenses, and punctuation.
                     </p>
 
-                    <a href="#grammar" class="subject-link">
+                    <a href="#grammar">
                         Start Learning →
                     </a>
                 </article>
 
-                <article class="subject-card">
-                    <div class="subject-icon">📚</div>
+                <article class="english-topic-card">
+                    <div class="english-topic-icon">📚</div>
 
                     <h3>Vocabulary</h3>
 
@@ -98,13 +309,13 @@
                         and their meanings.
                     </p>
 
-                    <a href="#vocabulary" class="subject-link">
+                    <a href="#vocabulary">
                         Start Learning →
                     </a>
                 </article>
 
-                <article class="subject-card">
-                    <div class="subject-icon">📖</div>
+                <article class="english-topic-card">
+                    <div class="english-topic-icon">📖</div>
 
                     <h3>Comprehension</h3>
 
@@ -113,13 +324,13 @@
                         their main ideas.
                     </p>
 
-                    <a href="#comprehension" class="subject-link">
+                    <a href="#comprehension">
                         Start Learning →
                     </a>
                 </article>
 
-                <article class="subject-card">
-                    <div class="subject-icon">📝</div>
+                <article class="english-topic-card">
+                    <div class="english-topic-icon">📝</div>
 
                     <h3>Essay Writing</h3>
 
@@ -128,91 +339,98 @@
                         express ideas clearly.
                     </p>
 
-                    <a href="#writing" class="subject-link">
+                    <a href="#writing">
                         Start Learning →
                     </a>
                 </article>
 
             </div>
-
         </section>
 
-        <section class="features-section">
+        <!-- English Lessons -->
+        <section class="english-lessons">
 
             <div class="section-heading">
                 <p class="tagline">LESSON NOTES</p>
+
                 <h2>Start Learning</h2>
             </div>
 
-            <article class="feature-card" id="grammar">
-                <h3>1. Grammar</h3>
+            <div class="english-lesson-list">
 
-                <p>
-                    Grammar is the set of rules that helps us
-                    arrange words correctly when speaking or writing.
-                </p>
+                <article class="english-lesson" id="grammar">
+                    <h3>✍️ 1. Grammar</h3>
 
-                <p><strong>Example:</strong> She reads every day.</p>
+                    <p>
+                        Grammar is the set of rules that helps us
+                        arrange words correctly when speaking or writing.
+                    </p>
 
-                <p>
-                    In this sentence, "She" is the subject,
-                    "reads" is the verb, and "every day" tells
-                    us when the action happens.
-                </p>
-            </article>
+                    <p>
+                        <strong>Example:</strong> She reads every day.
+                    </p>
 
-            <article class="feature-card" id="vocabulary">
-                <h3>2. Vocabulary</h3>
+                    <p>
+                        In this sentence, "She" is the subject,
+                        "reads" is the verb, and "every day" tells
+                        us when the action happens.
+                    </p>
+                </article>
 
-                <p>
-                    Vocabulary means the words we know and use.
-                    Learning new words helps us communicate better.
-                </p>
+                <article class="english-lesson" id="vocabulary">
+                    <h3>📚 2. Vocabulary</h3>
 
-                <p>
-                    <strong>Example:</strong> "Happy" means feeling
-                    pleasure or joy.
-                </p>
+                    <p>
+                        Vocabulary means the words we know and use.
+                        Learning new words helps us communicate better.
+                    </p>
 
-                <p>
-                    A synonym for happy is "joyful".
-                    An antonym is "sad".
-                </p>
-            </article>
+                    <p>
+                        <strong>Example:</strong> "Happy" means feeling
+                        pleasure or joy.
+                    </p>
 
-            <article class="feature-card" id="comprehension">
-                <h3>3. Reading Comprehension</h3>
+                    <p>
+                        A synonym for happy is "joyful".
+                        An antonym is "sad".
+                    </p>
+                </article>
 
-                <p>
-                    Reading comprehension means understanding
-                    what you read.
-                </p>
+                <article class="english-lesson" id="comprehension">
+                    <h3>📖 3. Reading Comprehension</h3>
 
-                <p>
-                    When reading a passage, look for its main idea,
-                    important details, and the meaning of unfamiliar
-                    words in context.
-                </p>
-            </article>
+                    <p>
+                        Reading comprehension means understanding
+                        what you read.
+                    </p>
 
-            <article class="feature-card" id="writing">
-                <h3>4. Essay Writing</h3>
+                    <p>
+                        When reading a passage, look for its main idea,
+                        important details, and the meaning of unfamiliar
+                        words in context.
+                    </p>
+                </article>
 
-                <p>
-                    An essay usually contains an introduction,
-                    a body, and a conclusion.
-                </p>
+                <article class="english-lesson" id="writing">
+                    <h3>📝 4. Essay Writing</h3>
 
-                <p>
-                    The introduction presents the topic.
-                    The body explains your ideas, and the
-                    conclusion brings the main points together.
-                </p>
-            </article>
+                    <p>
+                        An essay usually contains an introduction,
+                        a body, and a conclusion.
+                    </p>
 
+                    <p>
+                        The introduction presents the topic.
+                        The body explains your ideas, and the
+                        conclusion brings the main points together.
+                    </p>
+                </article>
+
+            </div>
         </section>
 
-        <section class="cta-section">
+        <!-- Call to Action -->
+        <section class="english-cta">
             <h2>Keep improving your English.</h2>
 
             <p>
@@ -227,6 +445,7 @@
 
     </main>
 
+    <!-- Footer -->
     <footer>
         <a href="index.html" class="logo">
             Study<span>Buddy</span>

@@ -9,29 +9,35 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
+        /* Biology page layout */
         .biology-content {
             max-width: 1100px;
             margin: 50px auto;
             padding: 20px;
         }
 
+        /* Biology introduction */
         .biology-hero {
             text-align: center;
             padding: 50px 20px;
             border-radius: 16px;
-            background: #e8f5e9;
-            color: #183b2b;
+            background: #142743;
+            color: #f1f5f9;
+            border: 1px solid #2b3d55;
         }
 
         .biology-hero h1 {
+            color: #d4af37;
             font-size: 2.5rem;
             margin: 15px 0;
         }
 
         .biology-hero p {
             line-height: 1.8;
+            color: #b0bfd2;
         }
 
+        /* Biology topics grid */
         .biology-topics {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -39,55 +45,139 @@
             margin-top: 30px;
         }
 
+        /* Biology topic cards */
         .biology-topic {
             padding: 25px;
             border-radius: 12px;
-            background: #ffffff;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            background: #172a45;
+            color: #e2e8f0;
+            border: 1px solid #2b3d55;
+            box-shadow: 0 4px 15px #00000020;
+            transition: 0.3s ease;
+        }
+
+        .biology-topic:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+            box-shadow: 0 10px 25px #00000035;
         }
 
         .biology-topic h3 {
+            color: #f1f5f9;
             margin-bottom: 12px;
         }
 
         .biology-topic p {
+            color: #b0bfd2;
             line-height: 1.7;
+            margin-bottom: 12px;
         }
 
+        .biology-topic strong {
+            color: #d4af37;
+        }
+
+        /* Section heading */
+        .biology-content .section-heading h2 {
+            color: #f1f5f9;
+        }
+
+        .biology-content .section-heading > p:last-child {
+            color: #b0bfd2;
+        }
+
+        .biology-content .tagline {
+            color: #d4af37;
+        }
+
+        /* Biology quiz */
         .biology-quiz {
             margin-top: 40px;
             padding: 30px;
             border-radius: 12px;
-            background: #f0f4f8;
+            background: #142743;
+            color: #e2e8f0;
+            border: 1px solid #2b3d55;
         }
 
         .biology-quiz h2 {
+            color: #d4af37;
             margin-bottom: 15px;
         }
 
-        .biology-quiz select,
-        .biology-quiz button {
+        .biology-quiz p {
+            color: #e2e8f0;
+            line-height: 1.7;
+        }
+
+        /* Quiz dropdown */
+        .biology-quiz select {
+            width: 100%;
+            max-width: 350px;
             padding: 12px;
             margin-top: 12px;
             border-radius: 6px;
-            border: 1px solid #ccc;
+            border: 1px solid #2b3d55;
+            background: #172a45;
+            color: #f1f5f9;
         }
 
+        /* Quiz button */
         .biology-quiz button {
+            padding: 12px 20px;
+            margin-top: 12px;
+            border-radius: 6px;
+            border: none;
             cursor: pointer;
-            background: #183b2b;
-            color: white;
+            background: #d4af37;
+            color: #0b1628;
+            font-weight: bold;
+            transition: 0.2s;
         }
 
+        .biology-quiz button:hover {
+            background: #f0d879;
+            transform: translateY(-2px);
+        }
+
+        /* Quiz feedback */
         #quizResult {
             margin-top: 15px;
             font-weight: bold;
+            color: #d4af37;
         }
 
+        /* Back to home link */
         .back-home {
             display: inline-block;
             margin-top: 25px;
+            color: #d4af37;
             text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-home:hover {
+            color: #f0d879;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 650px) {
+            .biology-content {
+                margin: 25px auto;
+                padding: 15px;
+            }
+
+            .biology-hero {
+                padding: 35px 20px;
+            }
+
+            .biology-hero h1 {
+                font-size: 2rem;
+            }
+
+            .biology-quiz {
+                padding: 22px;
+            }
         }
     </style>
 </head>
@@ -129,6 +219,7 @@
 
         <!-- Biology Topics -->
         <section id="biologyTopics">
+
             <div class="section-heading" style="margin-top: 45px;">
                 <p class="tagline">LEARN SOMETHING NEW</p>
                 <h2>Explore Biology Topics</h2>
@@ -139,68 +230,95 @@
 
                 <article class="biology-topic">
                     <h3>🔬 1. Cell Biology</h3>
+
                     <p>
                         Cells are the basic structural and functional
                         units of living organisms. Some organisms consist
                         of one cell, while others contain many cells.
                     </p>
-                    <p><strong>Key point:</strong> Cells carry out the
-                    processes needed for life.</p>
+
+                    <p>
+                        <strong>Key point:</strong>
+                        Cells carry out the processes needed for life.
+                    </p>
                 </article>
 
                 <article class="biology-topic">
                     <h3>🌱 2. Plant Biology</h3>
+
                     <p>
                         Plants are living organisms. Most plants make
                         their own food through photosynthesis, using
                         light energy, water, and carbon dioxide.
                     </p>
-                    <p><strong>Key point:</strong> Chlorophyll helps
-                    plants absorb light energy.</p>
+
+                    <p>
+                        <strong>Key point:</strong>
+                        Chlorophyll helps plants absorb light energy.
+                    </p>
                 </article>
 
                 <article class="biology-topic">
                     <h3>🫀 3. Human Biology</h3>
+
                     <p>
                         Human biology examines the structure and function
                         of the human body, including organs and body
                         systems such as the digestive and respiratory
                         systems.
                     </p>
-                    <p><strong>Key point:</strong> Different organs
-                    work together to keep the body functioning.</p>
+
+                    <p>
+                        <strong>Key point:</strong>
+                        Different organs work together to keep the body
+                        functioning.
+                    </p>
                 </article>
 
                 <article class="biology-topic">
                     <h3>🐾 4. Ecology</h3>
+
                     <p>
                         Ecology is the study of how organisms interact
                         with one another and with their environment.
                     </p>
-                    <p><strong>Key point:</strong> Living things depend
-                    on their environment for resources.</p>
+
+                    <p>
+                        <strong>Key point:</strong>
+                        Living things depend on their environment for
+                        resources.
+                    </p>
                 </article>
 
                 <article class="biology-topic">
                     <h3>🧬 5. Genetics</h3>
+
                     <p>
                         Genetics is the study of heredity and variation.
                         Genes carry information that can be passed from
                         parents to offspring.
                     </p>
-                    <p><strong>Key point:</strong> Genes influence
-                    inherited characteristics.</p>
+
+                    <p>
+                        <strong>Key point:</strong>
+                        Genes influence inherited characteristics.
+                    </p>
                 </article>
 
                 <article class="biology-topic">
                     <h3>🦠 6. Microbiology</h3>
+
                     <p>
                         Microbiology studies microscopic organisms,
                         including bacteria and many other organisms
                         that cannot be seen clearly with the naked eye.
                     </p>
-                    <p><strong>Key point:</strong> Microorganisms live
-                    in many different environments.</p>
+
+                    <p>
+                        <strong>Key point:</strong>
+                        Microorganisms live in many different
+                        environments.
+                    </p>
                 </article>
 
             </div>
@@ -251,6 +369,7 @@
         </p>
     </footer>
 
+    <!-- Biology Quiz JavaScript -->
     <script>
         function checkBiologyAnswer() {
             const answer = document.getElementById("biologyAnswer").value;
@@ -258,10 +377,14 @@
 
             if (answer === "") {
                 result.textContent = "Please choose an answer first.";
+                result.style.color = "#f0d879";
             } else if (answer === "chloroplast") {
-                result.textContent = "Correct! Chloroplasts contain chlorophyll.";
+                result.textContent =
+                    "Correct! Chloroplasts contain chlorophyll.";
+                result.style.color = "#d4af37";
             } else {
                 result.textContent = "Not quite. Try again!";
+                result.style.color = "#ff9999";
             }
         }
     </script>

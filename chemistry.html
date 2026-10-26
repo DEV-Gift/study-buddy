@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chemistry | Study Buddy</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Chemistry page */
+        .chemistry-page {
+            background-color: #0b1628;
+            color: #e2e8f0;
+            padding: 60px 5%;
+        }
+
+        .chemistry-page .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .chemistry-page .tagline {
+            color: #d4af37;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .chemistry-page h1,
+        .chemistry-page h2,
+        .chemistry-page h3 {
+            color: #f1f5f9;
+        }
+
+        .chemistry-page .highlight {
+            color: #d4af37;
+        }
+
+        .chemistry-page p {
+            color: #b0bfd2;
+            line-height: 1.7;
+        }
+
+        /* Topic cards */
+        .chemistry-topics {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto 65px;
+        }
+
+        .chemistry-topic {
+            background-color: #172a45;
+            border: 1px solid #2b3d55;
+            border-radius: 15px;
+            padding: 28px;
+            transition: transform 0.3s ease,
+                        border-color 0.3s ease;
+        }
+
+        .chemistry-topic:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+
+        .chemistry-topic .topic-icon {
+            font-size: 2.3rem;
+            margin-bottom: 12px;
+        }
+
+        .chemistry-topic h3 {
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .chemistry-topic p {
+            margin-bottom: 15px;
+        }
+
+        .chemistry-topic a {
+            color: #f0d879;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .chemistry-topic a:hover {
+            color: #d4af37;
+        }
+
+        /* Lesson notes */
+        .chemistry-lessons {
+            max-width: 1000px;
+            margin: 0 auto 65px;
+        }
+
+        .chemistry-lesson {
+            background-color: #142743;
+            border: 1px solid #2b3d55;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 18px;
+        }
+
+        .chemistry-lesson h3 {
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        /* Quiz */
+        .chemistry-quiz {
+            max-width: 750px;
+            margin: 0 auto 55px;
+            padding: 35px 25px;
+            text-align: center;
+            background-color: #142743;
+            border: 1px solid #2b3d55;
+            border-radius: 15px;
+        }
+
+        .chemistry-quiz h2 {
+            margin-bottom: 12px;
+        }
+
+        .chemistry-quiz h3 {
+            margin: 25px 0;
+        }
+
+        .chemistry-answers {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .chemistry-answers button {
+            background-color: #d4af37;
+            color: #0b1628;
+            border: 1px solid #d4af37;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .chemistry-answers button:hover {
+            background-color: #f0d879;
+        }
+
+        #chemistryResult {
+            min-height: 28px;
+            margin-top: 22px;
+            font-weight: bold;
+        }
+
+        #chemistryResult.correct {
+            color: #d4af37;
+        }
+
+        #chemistryResult.incorrect {
+            color: #ff9999;
+        }
+
+        .chemistry-back {
+            text-align: center;
+        }
+
+        .chemistry-back a {
+            display: inline-block;
+            background-color: #d4af37;
+            color: #0b1628;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-weight: bold;
+        }
+
+        .chemistry-back a:hover {
+            background-color: #f0d879;
+        }
+
+        @media (max-width: 650px) {
+            .chemistry-page {
+                padding: 40px 5%;
+            }
+
+            .chemistry-topics {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .chemistry-topic {
+                padding: 23px;
+            }
+
+            .chemistry-quiz {
+                padding: 28px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                Study<span>Buddy</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#subjects">Subjects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="chemistry-page">
+
+            <!-- Introduction -->
+            <div class="section-heading">
+                <p class="tagline">DISCOVER THE WORLD OF MATTER</p>
+
+                <h1>Chemistry</h1>
+
+                <p>
+                    Explore the substances that make up our world.
+                    Learn chemical concepts and test your understanding
+                    as you go.
+                </p>
+            </div>
+
+            <!-- Chemistry topics -->
+            <div class="chemistry-topics">
+
+                <article class="chemistry-topic">
+                    <div class="topic-icon">⚛️</div>
+
+                    <h3>Atoms and Elements</h3>
+
+                    <p>
+                        Learn about atoms, protons, neutrons, electrons,
+                        and the elements on the periodic table.
+                    </p>
+
+                    <a href="#atoms">Explore this topic ↓</a>
+                </article>
+
+                <article class="chemistry-topic">
+                    <div class="topic-icon">🧪</div>
+
+                    <h3>Acids and Bases</h3>
+
+                    <p>
+                        Discover the properties of acids and bases,
+                        the pH scale, and neutralisation.
+                    </p>
+
+                    <a href="#acids">Explore this topic ↓</a>
+                </article>
+
+                <article class="chemistry-topic">
+                    <div class="topic-icon">🔬</div>
+
+                    <h3>Chemical Reactions</h3>
+
+                    <p>
+                        Understand how substances react to form
+                        new substances.
+                    </p>
+
+                    <a href="#reactions">Explore this topic ↓</a>
+                </article>
+
+                <article class="chemistry-topic">
+                    <div class="topic-icon">🧊</div>
+
+                    <h3>States of Matter</h3>
+
+                    <p>
+                        Study solids, liquids, and gases, and learn
+                        how matter changes from one state to another.
+                    </p>
+
+                    <a href="#matter">Explore this topic ↓</a>
+                </article>
+
+            </div>
+
+            <!-- Lesson notes -->
+            <section class="chemistry-lessons">
+
+                <div class="section-heading">
+                    <p class="tagline">BUILD YOUR KNOWLEDGE</p>
+                    <h2>Quick <span class="highlight">Lesson Notes</span></h2>
+                    <p>
+                        Start with these important Chemistry concepts.
+                    </p>
+                </div>
+
+                <article class="chemistry-lesson" id="atoms">
+                    <h3>1. Atoms and Elements</h3>
+
+                    <p>
+                        An atom is the basic unit of a chemical element.
+                        It contains a nucleus made up of protons and
+                        usually neutrons, with electrons around the nucleus.
+                    </p>
+
+                    <p>
+                        An element is a pure substance made up of atoms
+                        with the same number of protons. Examples include
+                        oxygen, hydrogen, and carbon.
+                    </p>
+                </article>
+
+                <article class="chemistry-lesson" id="acids">
+                    <h3>2. Acids and Bases</h3>
+
+                    <p>
+                        Acids and bases have different chemical properties.
+                        In aqueous solution, acids increase the concentration
+                        of hydrogen ions, while bases can neutralise acids.
+                    </p>
+
+                    <p>
+                        The pH scale is commonly used to describe how acidic
+                        or basic an aqueous solution is. A pH below 7 is
+                        acidic, 7 is neutral, and above 7 is basic at
+                        approximately 25°C.
+                    </p>
+                </article>
+
+                <article class="chemistry-lesson" id="reactions">
+                    <h3>3. Chemical Reactions</h3>
+
+                    <p>
+                        A chemical reaction changes starting substances,
+                        called reactants, into new substances called products.
+                    </p>
+
+                    <p>
+                        For example, hydrogen reacts with oxygen to form
+                        water. Chemical equations represent these changes
+                        using chemical symbols and formulas.
+                    </p>
+                </article>
+
+                <article class="chemistry-lesson" id="matter">
+                    <h3>4. States of Matter</h3>
+
+                    <p>
+                        The three familiar states of matter are solids,
+                        liquids, and gases. Solids have a definite shape
+                        and volume, liquids have a definite volume but
+                        take the shape of their container, and gases
+                        expand to fill their container.
+                    </p>
+
+                    <p>
+                        Changes in temperature and pressure can cause
+                        matter to change state. Examples include melting,
+                        freezing, evaporation, and condensation.
+                    </p>
+                </article>
+
+            </section>
+
+            <!-- Chemistry quiz -->
+            <section class="chemistry-quiz">
+
+                <h2>Quick <span class="highlight">Quiz</span></h2>
+
+                <p>
+                    Let's see what you've learned!
+                </p>
+
+                <h3>Which particle has a negative electric charge?</h3>
+
+                <div class="chemistry-answers">
+                    <button
+                        type="button"
+                        onclick="checkChemistryAnswer('proton')">
+                        Proton
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="checkChemistryAnswer('electron')">
+                        Electron
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="checkChemistryAnswer('neutron')">
+                        Neutron
+                    </button>
+                </div>
+
+                <p id="chemistryResult" aria-live="polite"></p>
+
+            </section>
+
+            <!-- Back to subjects -->
+            <div class="chemistry-back">
+                <a href="index.html#subjects">
+                    ← Back to Subjects
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <a href="index.html" class="logo">
+            Study<span>Buddy</span>
+        </a>
+
+        <p>Learn something new. Improve every day.</p>
+        <p>&copy; 2026 Study Buddy. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function checkChemistryAnswer(answer) {
+            const result = document.getElementById("chemistryResult");
+
+            if (answer === "electron") {
+                result.textContent = "Correct! An electron has a negative charge. 🎉";
+                result.className = "correct";
+            } else {
+                result.textContent = "Not quite! Try again.";
+                result.className = "incorrect";
+            }
+        }
+    </script>
+
+</body>
+</html>
