@@ -14,17 +14,21 @@
     <!-- Navigation -->
     <header>
         <nav class="navbar">
+
             <a href="index.html" class="logo">
                 Study<span>Buddy</span>
             </a>
 
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#subjects">Subjects</a></li>
-                <li><a href="#features">Features</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="subjects.html">Subjects</a></li>
+                <li><a href="features.html">Features</a></li>
             </ul>
 
-            <a href="#subjects" class="nav-button">Start Learning</a>
+            <a href="subjects.html" class="nav-button">
+                Start Learning
+            </a>
+
         </nav>
     </header>
 
@@ -53,12 +57,12 @@
 
                 <div class="hero-buttons">
 
-                    <a href="#subjects" class="primary-button">
-                        Explore Subjects
+                    <a href="subjects.html" class="primary-button">
+                        Explore Subjects →
                     </a>
 
-                    <a href="#features" class="secondary-button">
-                        Discover Features
+                    <a href="features.html" class="secondary-button">
+                        Discover Features →
                     </a>
 
                 </div>
@@ -84,6 +88,7 @@
 
             </div>
 
+            <!-- Welcome Card -->
             <div class="hero-card">
 
                 <div class="card-icon">📚</div>
@@ -94,10 +99,10 @@
 
                 <p>
                     Choose a subject, explore a topic, and take the next
-                    step towards your goals.
+                    step towards your academic goals.
                 </p>
 
-                <a href="#subjects">
+                <a href="subjects.html">
                     Find your next topic →
                 </a>
 
@@ -105,296 +110,23 @@
 
         </section>
 
-
-        <!-- Subjects Section -->
-        <section class="subjects-section" id="subjects">
-
-            <div class="section-heading">
-
-                <p class="tagline">EXPLORE AND DISCOVER</p>
-
-                <h2>What do you want to learn?</h2>
-
-                <p>
-                    Choose a subject and start building your knowledge.
-                </p>
-
-            </div>
-
-
-            <!-- Subject Search -->
-            <div class="search-box">
-
-                <input
-                    type="text"
-                    id="subjectSearch"
-                    placeholder="Search for a subject..."
-                    aria-label="Search subjects"
-                >
-
-            </div>
-
-
-            <!-- Subject Cards -->
-            <div class="subject-grid" id="subjectGrid">
-
-
-                <!-- Mathematics -->
-                <article class="subject-card">
-
-                    <div class="subject-icon">🔢</div>
-
-                    <h3>Mathematics</h3>
-
-                    <p>
-                        Numbers, algebra, geometry, and statistics.
-                    </p>
-
-                    <a href="mathematics.html" class="subject-link">
-                        Start learning →
-                    </a>
-
-                </article>
-
-
-                <!-- English Language -->
-                <article class="subject-card">
-
-                    <div class="subject-icon">📖</div>
-
-                    <h3>English Language</h3>
-
-                    <p>
-                        Grammar, vocabulary, comprehension, and writing.
-                    </p>
-
-                    <a href="english.html" class="subject-link">
-                        Start learning →
-                    </a>
-
-                </article>
-
-
-                <!-- Biology -->
-                <article class="subject-card">
-
-                    <div class="subject-icon">🧬</div>
-
-                    <h3>Biology</h3>
-
-                    <p>
-                        Discover living organisms and the natural world.
-                    </p>
-
-                    <a href="biology.html" class="subject-link">
-                        Start learning →
-                    </a>
-
-                </article>
-
-
-                <!-- Chemistry -->
-                <article class="subject-card">
-
-                    <div class="subject-icon">⚗️</div>
-
-                    <h3>Chemistry</h3>
-
-                    <p>
-                        Explore elements, reactions, and matter.
-                    </p>
-
-                    <!-- Updated Chemistry link -->
-                    <a href="./chemistry.html" class="subject-link">
-                        Start learning →
-                    </a>
-
-                </article>
-
-
-                <!-- Physics -->
-                <article class="subject-card">
-
-                    <div class="subject-icon">⚡</div>
-
-                    <h3>Physics</h3>
-
-                    <p>
-                        Understand motion, energy, forces, and electricity.
-                    </p>
-
-                    <a href="#" class="subject-link">
-                        Coming soon →
-                    </a>
-
-                </article>
-
-
-                <!-- Computer Science -->
-                <article class="subject-card">
-
-                    <div class="subject-icon">💻</div>
-
-                    <h3>Computer Science</h3>
-
-                    <p>
-                        Learn programming and computer fundamentals.
-                    </p>
-
-                    <a href="#" class="subject-link">
-                        Coming soon →
-                    </a>
-
-                </article>
-
-
-                <!-- Economics -->
-                <article class="subject-card">
-
-                    <div class="subject-icon">📈</div>
-
-                    <h3>Economics</h3>
-
-                    <p>
-                        Study markets, resources, demand, and supply.
-                    </p>
-
-                    <a href="#" class="subject-link">
-                        Coming soon →
-                    </a>
-
-                </article>
-
-
-                <!-- Geography -->
-                <article class="subject-card">
-
-                    <div class="subject-icon">🌍</div>
-
-                    <h3>Geography</h3>
-
-                    <p>
-                        Explore places, environments, and our planet.
-                    </p>
-
-                    <a href="#" class="subject-link">
-                        Coming soon →
-                    </a>
-
-                </article>
-
-
-            </div>
-
-
-            <!-- Message When No Subjects Match -->
-            <p id="noResults" class="no-results" hidden>
-                No subjects found. Try another search.
-            </p>
-
-        </section>
-
-
-        <!-- Features Section -->
-        <section class="features-section" id="features">
-
-            <div class="section-heading">
-
-                <p class="tagline">MORE THAN JUST READING</p>
-
-                <h2>Everything you need to learn better.</h2>
-
-                <p>
-                    Develop better study habits, practise what you learn,
-                    and build confidence one subject at a time.
-                </p>
-
-            </div>
-
-
-            <div class="features-grid">
-
-
-                <!-- Feature 1 -->
-                <article class="feature-card">
-
-                    <div class="feature-icon">📚</div>
-
-                    <h3>Explore Subjects</h3>
-
-                    <p>
-                        Discover different subjects and explore educational
-                        topics in one convenient place.
-                    </p>
-
-                </article>
-
-
-                <!-- Feature 2 -->
-                <article class="feature-card">
-
-                    <div class="feature-icon">✍️</div>
-
-                    <h3>Practise and Learn</h3>
-
-                    <p>
-                        Strengthen your understanding by reviewing lesson
-                        notes and practising what you learn.
-                    </p>
-
-                </article>
-
-
-                <!-- Feature 3 -->
-                <article class="feature-card">
-
-                    <div class="feature-icon">🎯</div>
-
-                    <h3>Test Your Knowledge</h3>
-
-                    <p>
-                        Answer practice questions and quizzes to check your
-                        understanding of important concepts.
-                    </p>
-
-                </article>
-
-
-                <!-- Feature 4 -->
-                <article class="feature-card">
-
-                    <div class="feature-icon">🚀</div>
-
-                    <h3>Learn at Your Pace</h3>
-
-                    <p>
-                        Explore topics at a comfortable pace and revisit
-                        lessons whenever you need more practice.
-                    </p>
-
-                </article>
-
-
-            </div>
-
-        </section>
-
-
-        <!-- Call to Action Section -->
+        <!-- Call to Action -->
         <section class="cta-section">
 
             <div class="cta-content">
 
-                <p class="tagline">YOUR FUTURE STARTS WITH LEARNING</p>
+                <p class="tagline">
+                    YOUR FUTURE STARTS WITH LEARNING
+                </p>
 
                 <h2>Ready to take the next step?</h2>
 
                 <p>
-                    Choose a subject, explore a new topic, and keep moving
-                    towards your academic goals.
+                    Explore new subjects, practise what you learn,
+                    and keep moving towards your academic goals.
                 </p>
 
-                <a href="#subjects" class="primary-button">
+                <a href="subjects.html" class="primary-button">
                     Start Learning Today →
                 </a>
 
@@ -403,7 +135,6 @@
         </section>
 
     </main>
-
 
     <!-- Footer -->
     <footer>
@@ -421,10 +152,6 @@
         </p>
 
     </footer>
-
-
-    <!-- Homepage Search Functionality -->
-    <script src="script.js"></script>
 
 </body>
 </html>

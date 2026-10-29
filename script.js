@@ -1,46 +1,47 @@
-
-// Get the search input
+// Find the search box
 const subjectSearch = document.getElementById("subjectSearch");
 
-// Get all subject cards
+// Find all subject cards
 const subjectCards = document.querySelectorAll(".subject-card");
 
-// Get the message shown when no subject matches
+// Find the no-results message
 const noResults = document.getElementById("noResults");
 
-// Listen for typing in the search box
-subjectSearch.addEventListener("input", function () {
+// Check that the search box exists
+if (subjectSearch) {
+    subjectSearch.addEventListener("input", function () {
+        const searchText = subjectSearch.value.toLowerCase().trim();
+        let matchingSubjects = 0;
 
-    // Convert the search text to lowercase
-    const searchText = subjectSearch.value.toLowerCase().trim();
+        subjectCards.forEach(function (card) {
+            const heading = card.querySelector("h3");
+            const description = card.querySelector("p");
 
-    // Count matching subjects
-    let matchingSubjects = 0;
+            const subjectName = heading
+                ? heading.textContent.toLowerCase()
+                : "";
 
-    // Check every subject card
-    subjectCards.forEach(function (card) {
+            const subjectDescription = description
+                ? description.textContent.toLowerCase()
+                : "";
 
-        // Get the subject name
-        const subjectName = card.querySelector("h3").textContent.toLowerCase();
+            const matches =
+                subjectName.includes(searchText) ||
+                subjectDescription.includes(searchText);
 
-        // Get the subject description
-        const subjectDescription = card.querySelector("p").textContent.toLowerCase();
+            card.hidden = !matches;
 
-        // Check whether the name or description matches
-        const matches =
-            subjectName.includes(searchText) ||
-            subjectDescription.includes(searchText);
+            if (matches) {
+                matchingSubjects++;
+            }
+        });
 
-        // Show matching cards and hide the others
-        card.hidden = !matches;
-
-        // Count the matches
-        if (matches) {
-            matchingSubjects++;
+        if (noResults) {
+            noResults.hidden = matchingSubjects > 0;
         }
     });
 
-    // Show a message if nothing matches
-    noResults.hidden = matchingSubjects !== 0;
-
-});
+    console.log("Study Buddy search is ready!");
+} else {
+    console.error("Search box not found on this page.");
+}
