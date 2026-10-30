@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,8 +26,8 @@
                 <li><a href="features.html">Features</a></li>
             </ul>
 
-            <a href="subjects.html" class="nav-button">
-                Start Learning
+            <a href="#ask" class="nav-button">
+                Ask Study Buddy
             </a>
 
         </nav>
@@ -61,8 +62,8 @@
                         Explore Subjects →
                     </a>
 
-                    <a href="features.html" class="secondary-button">
-                        Discover Features →
+                    <a href="#ask" class="secondary-button">
+                        Ask a Question →
                     </a>
 
                 </div>
@@ -110,6 +111,49 @@
 
         </section>
 
+        <!-- Ask Study Buddy Section -->
+        <section class="ask-section" id="ask">
+
+            <div class="ask-content">
+
+                <p class="tagline">
+                    YOUR PERSONAL LEARNING ASSISTANT
+                </p>
+
+                <h2>What would you like to learn today?</h2>
+
+                <p>
+                    Ask any academic question and let Study Buddy
+                    help you understand it in simple terms.
+                </p>
+
+                <div class="question-box">
+
+                    <textarea
+                        id="studentQuestion"
+                        placeholder="Ask me anything about your subjects..."
+                        rows="3"
+                        aria-label="Enter your academic question"
+                    ></textarea>
+
+                    <button id="askButton" type="button">
+                        Ask Study Buddy →
+                    </button>
+
+                </div>
+
+                <div
+                    id="answerArea"
+                    class="answer-area"
+                    aria-live="polite"
+                >
+                    Your answer will appear here.
+                </div>
+
+            </div>
+
+        </section>
+
         <!-- Call to Action -->
         <section class="cta-section">
 
@@ -152,6 +196,9 @@
         </p>
 
     </footer>
+
+    <!-- Connect JavaScript -->
+    <script src="script.js"></script>
 
 </body>
 </html>
