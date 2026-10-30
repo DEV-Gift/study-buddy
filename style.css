@@ -1,4 +1,5 @@
-/* General settings */
+
+
 * {
     margin: 0;
     padding: 0;
@@ -271,6 +272,7 @@ header {
     text-align: center;
 }
 
+.section-heading h1,
 .section-heading h2 {
     color: var(--white);
     font-size: clamp(28px, 4vw, 38px);
@@ -310,7 +312,7 @@ header {
     box-shadow: 0 0 0 3px #d4af3725;
 }
 
-/* Subject cards */
+/* Subject and feature grids */
 .subject-grid,
 .features-grid {
     max-width: 1200px;
@@ -320,17 +322,15 @@ header {
     gap: 22px;
 }
 
+/* Subject cards */
 .subject-card {
     padding: 25px;
     border: 1px solid var(--border);
     border-radius: 14px;
     background: #172a45;
-
-    /* Align card content consistently */
     display: flex;
     flex-direction: column;
     height: 100%;
-
     transition: transform 0.2s ease,
                 border-color 0.2s ease,
                 box-shadow 0.2s ease;
@@ -340,6 +340,11 @@ header {
     transform: translateY(-5px);
     border-color: var(--gold);
     box-shadow: 0 12px 28px #00000035;
+}
+
+/* IMPORTANT: Hide cards that do not match the search */
+.subject-card[hidden] {
+    display: none !important;
 }
 
 .subject-icon {
@@ -364,8 +369,6 @@ header {
     color: var(--muted);
     font-size: 14px;
     margin-bottom: 18px;
-
-    /* Allow the description to fill available space */
     flex-grow: 1;
 }
 
@@ -386,6 +389,10 @@ header {
     text-align: center;
     color: var(--muted);
     margin-top: 25px;
+}
+
+.no-results[hidden] {
+    display: none !important;
 }
 
 /* Features */

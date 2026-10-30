@@ -7,8 +7,9 @@ const subjectCards = document.querySelectorAll(".subject-card");
 // Find the no-results message
 const noResults = document.getElementById("noResults");
 
-// Check that the search box exists
 if (subjectSearch) {
+    console.log("Search box found. Setting up search.");
+
     subjectSearch.addEventListener("input", function () {
         const searchText = subjectSearch.value.toLowerCase().trim();
         let matchingSubjects = 0;
@@ -39,9 +40,10 @@ if (subjectSearch) {
         if (noResults) {
             noResults.hidden = matchingSubjects > 0;
         }
-    });
 
-    console.log("Study Buddy search is ready!");
+        console.log("Search text:", searchText);
+        console.log("Matching subjects:", matchingSubjects);
+    });
 } else {
     console.error("Search box not found on this page.");
 }
