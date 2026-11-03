@@ -3,39 +3,40 @@ import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from dotenv import load_dotenv
-from openai import OpenAI
+from google import genai
 
-
-# Load the secret API key from the .env file
+# Load environment variables
 load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
-# Create the OpenAI client using your secret API key
-api_key = os.getenv("OPENAI_API_KEY")
+# Get Gemini API key
+api_key = os.getenv("GEMINI_API_KEY")
 
-client = OpenAI(api_key=api_key) if api_key else None
+# Connect to Gemini
+client = genai.Client(api_key=api_key) if api_key else None
 
 
 @app.route("/")
 def home():
-    return "Study Buddy backend is running!"
+    return "Studdy Buddy backend is running!"
 
 
 @app.route("/ask", methods=["POST"])
 def ask_question():
-    # Check whether the API key is configured
+
+    # Check API key
     if client is None:
         return jsonify({
-            "error": "The AI service is not configured yet."
+            "error": "Gemini API key is missing. Please check your setup."
         }), 500
 
-    # Read the question sent by the website
+    # Get student's question
     data = request.get_json(silent=True) or {}
     question = data.get("question", "")
 
-    # Make sure the question is text
+    # Validate question
     if not isinstance(question, str):
         return jsonify({
             "error": "Please enter a valid question."
@@ -43,54 +44,94 @@ def ask_question():
 
     question = question.strip()
 
-    # Reject empty questions
     if not question:
         return jsonify({
             "error": "Please enter an academic question."
         }), 400
 
-    # Limit the length of questions
     if len(question) > 2000:
         return jsonify({
             "error": "Please keep your question under 2,000 characters."
         }), 400
 
     try:
-        # Ask the AI to act as an academic learning assistant
-        response = client.responses.create(
-            model="gpt-4.1-mini",
-            instructions=(
-                "You are Study Buddy, a friendly academic learning "
-                "assistant for students. Help students understand "
-                "school subjects such as Mathematics, Biology, "
-                "Chemistry, Physics, English, and other academic "
-                "subjects. Explain concepts clearly and step by step "
-                "using language appropriate for a student. Give "
-                "examples when useful. If a question is unrelated "
-                "to education or learning, politely explain that "
-                "you focus on academic questions and invite the "
-                "student to ask about a school subject. Never claim "
-                "to know something you do not know."
+        # Send question to Gemini
+        response = client.interactions.create(
+            model="gemini-3.8-flash",
+            input=(
+                "You are Studdy Buddy, a friendly AI-powered "
+                "academic learning assistant. Help students "
+                "understand Mathematics, Biology, Chemistry, "
+                "Physics, English and other school subjects. "
+                "Explain concepts clearly and step by step. "
+                "Use simple language and examples where helpful. "
+                "If a question is unrelated to education, "
+                "politely guide the student back to academic learning.\n\n"
+                "Student's question: " + question
             ),
-            input=question,
-            max_output_tokens=800,
+            store=False
         )
 
         answer = response.output_text
 
+        if not answer:
+            return jsonify({
+                "error": "No answer was generated. Please try again."
+            }), 502
+
         return jsonify({
             "question": question,
             "answer": answer
-        })
+        }), 200
 
-    except Exception:
-        # Keep secret credentials and technical details out of responses
-        app.logger.exception("Study Buddy AI request failed.")
+    except Exception as error:
 
+        # Record technical details in the terminal
+        app.logger.exception("Gemini request failed.")
+
+        error_message = str(error).lower()
+
+        # Gemini temporarily unavailable
+        if "503" in error_message or "unavailable" in error_message:
+            return jsonify({
+                "error": (
+                    "Studdy Buddy is temporarily busy. "
+                    "Please wait a moment and try again."
+                )
+            }), 503
+
+        # API usage limit or exhausted credits
+        if "429" in error_message or "resource_exhausted" in error_message:
+            return jsonify({
+                "error": (
+                    "The AI service has reached its usage limit. "
+                    "Please try again later."
+                )
+            }), 429
+
+        # Invalid API key or permission problem
+        if "401" in error_message or "403" in error_message:
+            return jsonify({
+                "error": (
+                    "There is a problem with the Gemini API key "
+                    "or its permissions."
+                )
+            }), 401
+
+        # Model not found
+        if "404" in error_message or "not_found" in error_message:
+            return jsonify({
+                "error": (
+                    "The selected Gemini model is unavailable. "
+                    "Please check the model configuration."
+                )
+            }), 404
+
+        # Other errors
         return jsonify({
             "error": (
-                "Sorry, Study Buddy could not generate an answer. "
-                "Please check your API setup and try again."
+                "Something went wrong while generating your answer. "
+                "Please try again."
             )
         }), 500
 
