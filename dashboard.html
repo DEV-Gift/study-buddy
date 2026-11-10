@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Studdy Buddy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="sb-dashboard">
+
+    <aside class="sb-sidebar">
+
+        <h2 class="sb-logo">Studdy <span>Buddy.</span></h2>
+
+        <p class="sb-menu-title">MENU</p>
+
+        <nav>
+            <a href="dashboard.html" class="active">▦ Dashboard</a>
+            <a href="#my-learning">▣ My Learning</a>
+            <a href="subjects.html">◈ Subjects</a>
+            <a href="#quizzes">✎ Quizzes</a>
+            <a href="#bookmarks">☆ Bookmarks</a>
+        </nav>
+
+        <div class="sb-sidebar-bottom">
+            <a href="#settings">⚙ Settings</a>
+            <button id="logoutBtn">↪ Log Out</button>
+        </div>
+
+    </aside>
+
+
+    <main class="sb-main">
+
+        <header class="sb-topbar">
+
+            <div>
+                <p>STUDENT PORTAL</p>
+                <h3>Dashboard</h3>
+            </div>
+
+            <div class="sb-user">
+                <div class="sb-avatar" id="studentAvatar">S</div>
+
+                <div>
+                    <strong id="profileName">Student</strong>
+                    <small>Free Account</small>
+                </div>
+            </div>
+
+        </header>
+
+
+        <section class="sb-welcome">
+
+            <div>
+                <span class="sb-welcome-label">YOUR LEARNING SPACE</span>
+
+                <h1>
+                    Welcome back,
+                    <span id="studentName">Student</span>! 👋
+                </h1>
+
+                <p>
+                    Every day is another opportunity to learn something new.
+                    Let's make today count.
+                </p>
+
+                <a href="subjects.html" class="sb-primary-btn">
+                    Explore Subjects →
+                </a>
+            </div>
+
+            <div class="sb-welcome-decoration">
+                <span>✦</span>
+                <span>✧</span>
+                <div>LEARN<br>GROW<br>ACHIEVE.</div>
+            </div>
+
+        </section>
+
+
+        <section class="sb-stats">
+
+            <div class="sb-stat-card">
+                <span>📚</span>
+                <p>ENROLLED SUBJECTS</p>
+                <h2>4</h2>
+                <small>Your learning journey</small>
+            </div>
+
+            <div class="sb-stat-card">
+                <span>✓</span>
+                <p>COMPLETED LESSONS</p>
+                <h2>0</h2>
+                <small>Keep making progress</small>
+            </div>
+
+            <div class="sb-stat-card">
+                <span>✎</span>
+                <p>QUIZZES TAKEN</p>
+                <h2>0</h2>
+                <small>Test your knowledge</small>
+            </div>
+
+            <div class="sb-stat-card">
+                <span>◷</span>
+                <p>LEARNING HOURS</p>
+                <h2>0</h2>
+                <small>Time invested in learning</small>
+            </div>
+
+        </section>
+
+
+        <section class="sb-content-grid">
+
+            <div class="sb-learning" id="my-learning">
+
+                <div class="sb-section-heading">
+
+                    <div>
+                        <h2>Continue Learning</h2>
+                        <p>Pick up where you left off.</p>
+                    </div>
+
+                    <a href="subjects.html">View all →</a>
+
+                </div>
+
+
+                <div class="sb-course-card">
+
+                    <div class="sb-course-icon">∑</div>
+
+                    <div class="sb-course-info">
+                        <h3>Mathematics</h3>
+                        <p>Build your problem-solving skills.</p>
+
+                        <div class="sb-progress">
+                            <div style="width: 0%"></div>
+                        </div>
+
+                        <small>0% completed</small>
+                    </div>
+
+                    <a href="mathematics.html">Start →</a>
+
+                </div>
+
+
+                <div class="sb-course-card">
+
+                    <div class="sb-course-icon">🧬</div>
+
+                    <div class="sb-course-info">
+                        <h3>Biology</h3>
+                        <p>Discover the science of life.</p>
+
+                        <div class="sb-progress">
+                            <div style="width: 0%"></div>
+                        </div>
+
+                        <small>0% completed</small>
+                    </div>
+
+                    <a href="biology.html">Start →</a>
+
+                </div>
+
+
+                <div class="sb-course-card">
+
+                    <div class="sb-course-icon">Aa</div>
+
+                    <div class="sb-course-info">
+                        <h3>English Language</h3>
+                        <p>Improve your communication skills.</p>
+
+                        <div class="sb-progress">
+                            <div style="width: 0%"></div>
+                        </div>
+
+                        <small>0% completed</small>
+                    </div>
+
+                    <a href="english.html">Start →</a>
+
+                </div>
+
+            </div>
+
+
+            <aside class="sb-right-panel">
+
+                <div class="sb-progress-card">
+
+                    <span>YOUR PERFORMANCE</span>
+
+                    <h2>Learning Progress</h2>
+
+                    <div class="sb-circle">
+                        <div>
+                            <strong>0%</strong>
+                            <small>Completed</small>
+                        </div>
+                    </div>
+
+                    <p>Your learning journey starts here!</p>
+
+                </div>
+
+
+                <div class="sb-activity">
+
+                    <h3>Recent Activity</h3>
+
+                    <div class="sb-empty">
+                        <span>◷</span>
+                        <p>No activities yet.</p>
+                        <small>Your learning activities will appear here.</small>
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+
+        <footer class="sb-footer">
+            <p>© 2026 Studdy Buddy. Learn smarter. Grow further.</p>
+        </footer>
+
+    </main>
+
+
+    <script type="module" src="dashboard.js"></script>
+
+</body>
+</html>
