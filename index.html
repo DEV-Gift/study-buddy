@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Study Buddy | Study Smarter</title>
+    <title>Studdy Buddy | Study Smarter</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,7 +16,7 @@
         <nav class="navbar">
 
             <a href="index.html" class="logo">
-                Study<span>Buddy</span>
+                Studdy<span>Buddy</span>
             </a>
 
             <ul class="nav-links">
@@ -25,9 +25,15 @@
                 <li><a href="features.html">Features</a></li>
             </ul>
 
-            <a href="#ask" class="nav-button">
-                Ask Study Buddy
-            </a>
+            <div class="auth-buttons">
+                <a href="login.html" class="secondary-button">
+                    Sign In
+                </a>
+
+                <a href="signup.html" class="primary-button">
+                    Sign Up
+                </a>
+            </div>
 
         </nav>
     </header>
@@ -57,12 +63,12 @@
 
                 <div class="hero-buttons">
 
-                    <a href="subjects.html" class="primary-button">
-                        Explore Subjects →
+                    <a href="signup.html" class="primary-button">
+                        Create an Account →
                     </a>
 
-                    <a href="#ask" class="secondary-button">
-                        Ask a Question →
+                    <a href="login.html" class="secondary-button">
+                        Sign In →
                     </a>
 
                 </div>
@@ -98,17 +104,17 @@
                 <h2>Knowledge starts with curiosity.</h2>
 
                 <p>
-                    Choose a subject, explore a topic, and take the next
-                    step towards your academic goals.
+                    Create an account to explore subjects, learn new topics,
+                    and take the next step towards your academic goals.
                 </p>
 
-                <a href="subjects.html">
-                    Find your next topic →
+                <a href="signup.html">
+                    Join Studdy Buddy →
                 </a>
 
             </div>
 
-        </section>  
+        </section>
 
         <!-- Ask Study Buddy Section -->
         <section class="ask-section" id="ask">
@@ -122,32 +128,13 @@
                 <h2>What would you like to learn today?</h2>
 
                 <p>
-                    Ask any academic question and let Study Buddy
-                    help you understand it in simple terms.
+                    Sign in to ask academic questions and let Studdy Buddy
+                    help you understand them in simple terms.
                 </p>
 
-                <div class="question-box">
-
-                    <textarea
-                        id="studentQuestion"
-                        placeholder="Ask me anything about your subjects..."
-                        rows="3"
-                        aria-label="Enter your academic question"
-                    ></textarea>
-
-                    <button id="askButton" type="button">
-                        Ask Study Buddy →
-                    </button>
-
-                </div>
-
-                <div
-                    id="answerArea"
-                    class="answer-area"
-                    aria-live="polite"
-                >
-                    Your answer will appear here.
-                </div>
+                <a href="login.html" class="primary-button">
+                    Sign In to Ask a Question →
+                </a>
 
             </div>
 
@@ -165,11 +152,11 @@
                 <h2>Ready to take the next step?</h2>
 
                 <p>
-                    Explore new subjects, practise what you learn,
-                    and keep moving towards your academic goals.
+                    Create your account and start exploring new subjects,
+                    practising what you learn, and reaching your academic goals.
                 </p>
 
-                <a href="subjects.html" class="primary-button">
+                <a href="signup.html" class="primary-button">
                     Start Learning Today →
                 </a>
 
@@ -183,7 +170,7 @@
     <footer>
 
         <a href="index.html" class="logo">
-            Study<span>Buddy</span>
+            Studdy<span>Buddy</span>
         </a>
 
         <p>
@@ -191,12 +178,11 @@
         </p>
 
         <p>
-            &copy; 2026 Study Buddy. All rights reserved.
+            &copy; 2026 Studdy Buddy. All rights reserved.
         </p>
 
     </footer>
 
-    <!-- Connect JavaScript -->
     <script src="script.js"></script>
 
 </body>
