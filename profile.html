@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | Studdy Buddy</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="sb-dashboard">
+
+    <aside class="sb-sidebar">
+
+        <h2 class="sb-logo">Studdy <span>Buddy.</span></h2>
+
+        <p class="sb-menu-title">MENU</p>
+
+        <nav>
+            <a href="dashboard.html">▦ Dashboard</a>
+            <a href="my-learning.html">▣ My Learning</a>
+            <a href="subjects.html">◈ Subjects</a>
+            <a href="quizzes.html">✎ Quizzes</a>
+            <a href="bookmarks.html">☆ Bookmarks</a>
+            <a href="profile.html" class="active">👤 My Profile</a>
+        </nav>
+
+        <div class="sb-sidebar-bottom">
+            <a href="settings.html">⚙ Settings</a>
+            <button id="logoutBtn">↪ Log Out</button>
+        </div>
+
+    </aside>
+
+
+    <main class="sb-main">
+
+        <header class="sb-topbar">
+
+            <div>
+                <p>STUDENT PORTAL</p>
+                <h3>My Profile</h3>
+            </div>
+
+        </header>
+
+
+        <section class="profile-container">
+
+            <div class="profile-heading">
+                <h1>My Profile</h1>
+                <p>Manage your personal information and account details.</p>
+            </div>
+
+
+            <div class="profile-card">
+
+                <div class="profile-picture-section">
+
+                    <div class="profile-picture">
+                        <img id="profilePreview"
+                             src="https://placehold.co/150x150/1b2c45/d4af37?text=Profile"
+                             alt="Profile Picture">
+                    </div>
+
+                    <div>
+                        <h2 id="displayName">Student Name</h2>
+                        <p>Studdy Buddy Student</p>
+
+                        <label for="profileImage" class="upload-btn">
+                            Upload Picture
+                        </label>
+
+                        <input type="file"
+                               id="profileImage"
+                               accept="image/*"
+                               hidden>
+                    </div>
+
+                </div>
+
+
+                <form id="profileForm">
+
+                    <h2>Personal Information</h2>
+
+                    <div class="profile-form-grid">
+
+                        <div class="profile-field">
+                            <label for="fullName">Full Name</label>
+                            <input type="text"
+                                   id="fullName"
+                                   placeholder="Enter your full name">
+                        </div>
+
+                        <div class="profile-field">
+                            <label for="email">Email Address</label>
+                            <input type="email"
+                                   id="email"
+                                   placeholder="Your email address"
+                                   readonly>
+                        </div>
+
+                        <div class="profile-field profile-bio">
+                            <label for="bio">About Me</label>
+                            <textarea id="bio"
+                                      rows="4"
+                                      placeholder="Tell us something about yourself..."></textarea>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="save-profile-btn">
+                        Save Changes
+                    </button>
+
+                    <p id="profileMessage"></p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <footer class="sb-footer">
+            <p>© 2026 Studdy Buddy. Learn smarter. Grow further.</p>
+        </footer>
+
+    </main>
+
+
+    <script type="module" src="profile.js"></script>
+
+</body>
+</html>
