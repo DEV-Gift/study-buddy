@@ -4,10 +4,8 @@ import {
     signInWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-
 const loginForm = document.getElementById("loginForm");
 const message = document.getElementById("loginMessage");
-
 
 loginForm.addEventListener("submit", async function(event) {
 
@@ -21,9 +19,16 @@ loginForm.addEventListener("submit", async function(event) {
         message.textContent = "Signing you in...";
         message.style.color = "#d4af37";
 
-        await signInWithEmailAndPassword(auth, email, password);
+        const userCredential = await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
+
+        console.log("Logged in successfully:", userCredential.user);
 
         message.textContent = "Login successful!";
+        message.style.color = "green";
 
         setTimeout(() => {
             window.location.href = "dashboard.html";
@@ -33,15 +38,21 @@ loginForm.addEventListener("submit", async function(event) {
 
         message.style.color = "red";
 
-        if (error.code === "auth/invalid-credential") {
+        if (
+            error.code === "auth/invalid-credential" ||
+            error.code === "auth/user-not-found" ||
+            error.code === "auth/wrong-password"
+        ) {
             message.textContent = "Incorrect email or password.";
-        } else if (error.code === "auth/user-not-found") {
-            message.textContent = "Account not found.";
+
+        } else if (error.code === "auth/invalid-email") {
+            message.textContent = "Please enter a valid email address.";
+
         } else {
-            message.textContent = error.message;
+            message.textContent = "Login failed. Please try again.";
         }
 
-        console.error(error);
+        console.error("Login error:", error);
 
     }
 

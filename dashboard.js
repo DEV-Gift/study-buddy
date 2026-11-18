@@ -5,11 +5,9 @@ import {
     signOut
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-
 const studentName = document.getElementById("studentName");
 const profileName = document.getElementById("profileName");
 const studentAvatar = document.getElementById("studentAvatar");
-
 
 // Check whether a student is logged in
 onAuthStateChanged(auth, (user) => {
@@ -18,10 +16,11 @@ onAuthStateChanged(auth, (user) => {
 
         const name = user.displayName || "Student";
 
-        studentName.textContent = name;
-        profileName.textContent = name;
-
-        studentAvatar.textContent = name.charAt(0).toUpperCase();
+        if (studentName) studentName.textContent = name;
+        if (profileName) profileName.textContent = name;
+        if (studentAvatar) {
+            studentAvatar.textContent = name.charAt(0).toUpperCase();
+        }
 
     } else {
 
@@ -31,20 +30,25 @@ onAuthStateChanged(auth, (user) => {
 
 });
 
-
 // Logout functionality
-document.getElementById("logoutBtn").addEventListener("click", async () => {
+const logoutBtn = document.getElementById("logoutBtn");
 
-    try {
+if (logoutBtn) {
 
-        await signOut(auth);
+    logoutBtn.addEventListener("click", async () => {
 
-        window.location.href = "login.html";
+        try {
 
-    } catch (error) {
+            await signOut(auth);
 
-        console.error("Logout error:", error);
+            window.location.href = "login.html";
 
-    }
+        } catch (error) {
 
-});
+            console.error("Logout error:", error);
+
+        }
+
+    });
+
+}
