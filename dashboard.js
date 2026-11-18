@@ -8,6 +8,7 @@ import {
 const studentName = document.getElementById("studentName");
 const profileName = document.getElementById("profileName");
 const studentAvatar = document.getElementById("studentAvatar");
+const welcomeAvatar = document.getElementById("welcomeAvatar");
 
 // Check whether a student is logged in
 onAuthStateChanged(auth, (user) => {
@@ -16,10 +17,56 @@ onAuthStateChanged(auth, (user) => {
 
         const name = user.displayName || "Student";
 
-        if (studentName) studentName.textContent = name;
-        if (profileName) profileName.textContent = name;
-        if (studentAvatar) {
-            studentAvatar.textContent = name.charAt(0).toUpperCase();
+        // Display student's name
+        if (studentName) {
+            studentName.textContent = name;
+        }
+
+        if (profileName) {
+            profileName.textContent = name;
+        }
+
+        // Get saved profile picture
+        const savedImage = localStorage.getItem(
+            `studdyBuddyProfileImage_${user.uid}`
+        );
+
+        if (savedImage) {
+
+            // Display picture in dashboard top-right corner
+            if (studentAvatar) {
+
+                const image = document.createElement("img");
+
+                image.src = savedImage;
+                image.alt = "Student Profile Picture";
+
+                studentAvatar.replaceChildren(image);
+
+            }
+
+            // Display picture beside Welcome Back
+            if (welcomeAvatar) {
+
+                welcomeAvatar.src = savedImage;
+                welcomeAvatar.style.display = "block";
+
+            }
+
+        } else {
+
+            // Display student's initial if no picture exists
+            if (studentAvatar) {
+
+                studentAvatar.textContent =
+                    name.charAt(0).toUpperCase();
+
+            }
+
+            if (welcomeAvatar) {
+                welcomeAvatar.style.display = "none";
+            }
+
         }
 
     } else {
@@ -29,6 +76,7 @@ onAuthStateChanged(auth, (user) => {
     }
 
 });
+
 
 // Logout functionality
 const logoutBtn = document.getElementById("logoutBtn");
@@ -51,4 +99,4 @@ if (logoutBtn) {
 
     });
 
-}
+} 
