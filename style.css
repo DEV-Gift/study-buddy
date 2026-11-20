@@ -1876,3 +1876,62 @@ textarea:focus-visible {
 .welcome-user h1 {
     margin: 0;
 }
+
+/* ABOUT ME SECTION */
+
+.sb-about-section {
+    background: #172a45;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 30px 0;
+    border: 1px solid #2b3d55;
+}
+
+.sb-about-section h2 {
+    color: #d4af37;
+    margin-bottom: 8px;
+}
+
+.sb-about-section p {
+    color: #b0bfd2;
+}
+
+.sb-about-section textarea {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background: #0b1628;
+    color: #f1f5f9;
+    border: 1px solid #2b3d55;
+    border-radius: 10px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.sb-about-section textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+.sb-about-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    gap: 15px;
+}
+
+.sb-about-footer small {
+    color: #b0bfd2;
+}
+
+.sb-about-footer button {
+    border: none;
+    cursor: pointer;
+}
+
+#aboutMeMessage {
+    margin-top: 12px;
+    font-size: 13px;
+}
